@@ -1,0 +1,39 @@
+.navBlock {
+    display: flex;
+    max-width: 600px;
+    margin: 2rem auto;
+    justify-content: space-between;
+    align-items: center;
+
+    .logoBlock {
+        display: flex;
+
+        .logo {
+            height: 3em;
+            will-change: filter;
+            transition: filter 300ms;
+        }
+
+        .titleLogo {
+            font-size: 2rem;
+            margin-left: 1rem;
+            color: #5a6f07;
+        }
+    }
+
+    .lienBlock {
+        display: flex;
+        gap: 2rem;
+
+        .lien {
+            color: #5a6f07;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 900;
+
+            &:hover {
+                color: #93ad18;
+            }
+        }
+    }
+}

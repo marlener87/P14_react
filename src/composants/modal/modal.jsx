@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import './modal.scss';
 
 function Modal({ isOpen, onClose, title, children }) {
     // isOpen : booléen qui indique si la modale est visible
@@ -29,8 +28,80 @@ function Modal({ isOpen, onClose, title, children }) {
     if (!isOpen) return null;
 
     return (
-        <div className="modal-overlay" onClick={onClose}>
-          <div className="modal-container" onClick={(e) => e.stopPropagation()}> {/* empêche la fermeture quand on clique dans la modale */}
+        <div
+            onClick={onClose}
+            style={{
+                position: 'fixed',
+                inset: 0,
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                zIndex: 1000,
+            }}
+        >
+            <div
+                onClick={(e) => e.stopPropagation()}
+                style={{
+                    backgroundColor: '#fff',
+                    borderRadius: '8px',
+                    padding: '1.5rem',
+                    width: '100%',
+                    maxWidth: '500px',
+                    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+                    animation: 'fadeIn 0.2s ease-in-out',
+                }}
+            >
+            <style>
+            {`
+                @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                }
+            `}
+            </style>
+                <div
+                    style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    marginBottom: '1rem',
+                    }}
+                >
+                    <h2 style={{ margin: 0, fontSize: '1.25rem' }}>{title}</h2>
+                    <button
+                    onClick={onClose}
+                    style={{
+                        background: 'none',
+                        border: 'none',
+                        fontSize: '1.5rem',
+                        cursor: 'pointer',
+                        color: '#666',
+                    }}
+                    onMouseEnter={(e) => (e.target.style.color = '#000')}
+                    onMouseLeave={(e) => (e.target.style.color = '#666')}
+                    >
+                    ✕
+                    </button>
+                </div>
+                <div style={{ fontSize: '1rem', color: '#333' }}>{children}</div>
+            </div>
+        </div>
+    );
+};
+
+export default Modal;
+
+
+/*
+<div className="modal-overlay" onClick={onClose}>
+          <div className="modal-container" onClick={(e) => e.stopPropagation()}> {/* empêche la fermeture quand on clique dans la modale *//*}
             <div className="modal-header">
               <h2>{title}</h2>
               <button className="modal-close" onClick={onClose}>✕</button>
@@ -38,7 +109,4 @@ function Modal({ isOpen, onClose, title, children }) {
             <div className="modal-body">{children}</div>
           </div>
         </div>
-      );
-};
-
-export default Modal;
+*/

@@ -4,26 +4,83 @@
     text-align: center;
 }
 
-main {
-    margin: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.homeBody {
+    padding: 2rem;
 
-    .logo {
-        height: 3em;
-        will-change: filter;
-        transition: filter 300ms;
-    }
-
-    .titleLogo {
-        font-size: 1.5rem;
-        margin-left: 1rem;
-    }
-}
-
-body {
     .h1Body {
         font-size: 1.9rem;
     }
+    
+    .employeeForm {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        background-color: #f9f9f9;
+    
+        label {
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+    
+        input, select {
+            width: 100%;
+            padding: 0.6rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        input {
+            margin-bottom: 1rem;
+        }
+
+        .dateBlock {
+            display: flex;
+        }
+    
+        fieldset {
+            width: 100%;
+            margin: 1rem 0;
+            padding: 10px;
+            border-radius: 8px;
+            border-color: #5a6f07;
+        
+            legend {
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+                text-align: left;
+                font-size: 1.3rem;
+                color: #6a8015;
+            }
+            
+            label {
+                text-align: left;
+            }
+        }
+    
+        button[type="submit"] {
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            background-color: #93ad18;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 20px auto;
+        
+            &:hover {
+                background-color: #5a6f07;
+            }
+        }
+    }
 }
+      
