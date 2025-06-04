@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './home.scss'
-import Modal from '../../composants/modal/modal';
+//import Modal from '../../composants/modal/modal';
+import Modal from 'modale_form_npm';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import states from '../../assets/states.json';
