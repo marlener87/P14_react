@@ -51,3 +51,13 @@ L’application permet d’ajouter de nouveaux employés via un formulaire, de l
 ```bash
 git clone https://github.com/marlener87/P14_react
 cd P14_react
+npm install
+npm run dev
+```
+
+2. **Compiler le projet :**
+
+```bash
+npm run build
+npm run preview 
+```

@@ -21,7 +21,7 @@ function Home() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [startDate, setStartDate] = useState(null);
-    const [birthDate, setBirthDate] = useState(null);
+    const [dateOfBirth, setDateOfBirth] = useState(null);
     const [street, setStreet] = useState('');
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
@@ -34,7 +34,7 @@ function Home() {
         const employee = {
             firstName,
             lastName,
-            birthDate: birthDate?.toISOString().split('T')[0],
+            dateOfBirth: dateOfBirth?.toISOString().split('T')[0],
             startDate: startDate?.toISOString().split('T')[0],
             street,
             city,
@@ -51,7 +51,7 @@ function Home() {
         // réinitialise le formulaire
         setFirstName('');
         setLastName('');
-        setBirthDate(null);
+        setDateOfBirth(null);
         setStartDate(null);
         setStreet('');
         setCity('');
@@ -92,17 +92,17 @@ function Home() {
 
                 <div className="dateBlock">
                     <div>
-                        <label htmlFor="birthDate">Date of Birth</label>
+                        <label htmlFor="dateOfBirth">Date of Birth</label>
                         <DatePicker
-                            selected={birthDate}
-                            onChange={(date) => setBirthDate(date)}
+                            selected={dateOfBirth}
+                            onChange={(date) => setDateOfBirth(date)}
                             dateFormat="yyyy-MM-dd"
                             placeholderText="Select date"
                             maxDate={new Date(new Date().setFullYear(new Date().getFullYear() - 18))} // personne majeure
                             showYearDropdown
                             showMonthDropdown
                             dropdownMode="select"
-                            id="birthDate"
+                            id="dateOfBirth"
                         />
                     </div>
                     
