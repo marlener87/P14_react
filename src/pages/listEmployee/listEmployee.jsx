@@ -32,9 +32,7 @@ const EmployeeTable = () => {
     // état pour le tri des colonnes
     const [sortConfig, setSortConfig] = useState({ key: 'firstName', direction: 'asc' } );
 
-    //const employees = employeesData;
-
-    // filtre ne fonction de la recherche
+    // filtre fonction de la recherche
     const filteredEmployees = useMemo(() => {
         return employees.filter(emp =>
             Object.values(emp).some(val =>
